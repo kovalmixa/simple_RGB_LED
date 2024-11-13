@@ -25,10 +25,17 @@ void rgb(int _x){
   
 }
 
-void led(){
-  analogWrite(redPin, 255 - red);
-  analogWrite(greenPin, 255 - green);
-  analogWrite(bluePin, 255 - blue);
+void led(bool isCathod = true){
+  if (isCathod){
+    analogWrite(redPin, red);
+    analogWrite(greenPin, green);
+    analogWrite(bluePin, blue);
+  }
+  else{
+    analogWrite(redPin, 255 - red);
+    analogWrite(greenPin, 255 - green);
+    analogWrite(bluePin, 255 - blue);
+  }
 }
 
 void signal(bool isAuto){
